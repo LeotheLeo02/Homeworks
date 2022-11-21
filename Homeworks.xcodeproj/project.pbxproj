@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */; };
-		43AC6DF6292C22D200917BC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF5292C22D200917BC2 /* ContentView.swift */; };
+		43AC6DF6292C22D200917BC2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF5292C22D200917BC2 /* Home.swift */; };
 		43AC6DF8292C22D300917BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AC6DF7292C22D300917BC2 /* Assets.xcassets */; };
 		43AC6DFB292C22D300917BC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AC6DFA292C22D300917BC2 /* Preview Assets.xcassets */; };
 		43AC6DFD292C22D300917BC2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DFC292C22D300917BC2 /* Persistence.swift */; };
@@ -18,12 +18,13 @@
 /* Begin PBXFileReference section */
 		43AC6DF0292C22D200917BC2 /* Homeworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworksApp.swift; sourceTree = "<group>"; };
-		43AC6DF5292C22D200917BC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		43AC6DF5292C22D200917BC2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		43AC6DF7292C22D300917BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43AC6DFA292C22D300917BC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43AC6DFC292C22D300917BC2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		43AC6DFF292C22D300917BC2 /* Homeworks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homeworks.xcdatamodel; sourceTree = "<group>"; };
 		43AC6E01292C22D300917BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43AC6E07292C22E300917BC2 /* Homeworks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Homeworks.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +57,9 @@
 		43AC6DF2292C22D200917BC2 /* Homeworks */ = {
 			isa = PBXGroup;
 			children = (
+				43AC6E07292C22E300917BC2 /* Homeworks.entitlements */,
 				43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */,
-				43AC6DF5292C22D200917BC2 /* ContentView.swift */,
+				43AC6DF5292C22D200917BC2 /* Home.swift */,
 				43AC6DF7292C22D300917BC2 /* Assets.xcassets */,
 				43AC6DFC292C22D300917BC2 /* Persistence.swift */,
 				43AC6E01292C22D300917BC2 /* Info.plist */,
@@ -147,7 +149,7 @@
 			files = (
 				43AC6DFD292C22D300917BC2 /* Persistence.swift in Sources */,
 				43AC6E00292C22D300917BC2 /* Homeworks.xcdatamodeld in Sources */,
-				43AC6DF6292C22D200917BC2 /* ContentView.swift in Sources */,
+				43AC6DF6292C22D200917BC2 /* Home.swift in Sources */,
 				43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,12 +276,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Homeworks/Homeworks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Homeworks/Preview Content\"";
 				DEVELOPMENT_TEAM = 8LGZB97F67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Homeworks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,12 +307,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Homeworks/Homeworks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Homeworks/Preview Content\"";
 				DEVELOPMENT_TEAM = 8LGZB97F67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Homeworks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
