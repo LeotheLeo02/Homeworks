@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBB292C4E1A00BC02E1 /* ListView.swift */; };
+		43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBE292C61F500BC02E1 /* NewListView.swift */; };
 		43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */; };
 		43AC6DF6292C22D200917BC2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF5292C22D200917BC2 /* Home.swift */; };
 		43AC6DF8292C22D300917BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AC6DF7292C22D300917BC2 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43370FBB292C4E1A00BC02E1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		43370FBE292C61F500BC02E1 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
 		43AC6DF0292C22D200917BC2 /* Homeworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworksApp.swift; sourceTree = "<group>"; };
 		43AC6DF5292C22D200917BC2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -38,6 +42,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43370FBD292C5E9E00BC02E1 /* ListEssentials */ = {
+			isa = PBXGroup;
+			children = (
+				43AC6DF5292C22D200917BC2 /* Home.swift */,
+				43370FBB292C4E1A00BC02E1 /* ListView.swift */,
+				43370FBE292C61F500BC02E1 /* NewListView.swift */,
+			);
+			path = ListEssentials;
+			sourceTree = "<group>";
+		};
 		43AC6DE7292C22D200917BC2 = {
 			isa = PBXGroup;
 			children = (
@@ -59,7 +73,7 @@
 			children = (
 				43AC6E07292C22E300917BC2 /* Homeworks.entitlements */,
 				43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */,
-				43AC6DF5292C22D200917BC2 /* Home.swift */,
+				43370FBD292C5E9E00BC02E1 /* ListEssentials */,
 				43AC6DF7292C22D300917BC2 /* Assets.xcassets */,
 				43AC6DFC292C22D300917BC2 /* Persistence.swift */,
 				43AC6E01292C22D300917BC2 /* Info.plist */,
@@ -148,7 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43AC6DFD292C22D300917BC2 /* Persistence.swift in Sources */,
+				43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */,
 				43AC6E00292C22D300917BC2 /* Homeworks.xcdatamodeld in Sources */,
+				43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */,
 				43AC6DF6292C22D200917BC2 /* Home.swift in Sources */,
 				43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */,
 			);

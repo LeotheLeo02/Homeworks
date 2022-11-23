@@ -58,10 +58,11 @@ struct PersistenceController {
 
 
 extension PersistenceController {
-    func addItem(name: String, context: NSManagedObjectContext) {
+    func addAssign(name: String, duedate: Date, context: NSManagedObjectContext) {
         withAnimation {
             let newAssign = Assignment(context: context)
             newAssign.name = name
+            newAssign.duedate = duedate
 
             do {
                 try context.save()
