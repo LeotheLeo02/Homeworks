@@ -82,4 +82,15 @@ extension PersistenceController {
         context.delete(assign)
         save(context: context)
     }
+    
+    func addCheckPoint(name: String, deadline: Date, relateTo assign: Assignment, context: NSManagedObjectContext){
+        if let context = assign.managedObjectContext{
+            context.performAndWait {
+                let newCheck = Checkpoint(context: context)
+                newCheck.name = name
+                newCheck.deadline = deadline
+                save(context: context)
+            }
+        }
+    }
 }
