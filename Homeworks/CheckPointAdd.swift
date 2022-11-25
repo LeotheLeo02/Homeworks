@@ -12,6 +12,7 @@ struct CheckPointAdd: View {
     init(assign: Assignment) {
         self.assign = assign
     }
+    @FocusState var focnam: Bool
     @State var add = false
     @State var name = ""
     @State var deadline = Date()
@@ -23,16 +24,17 @@ struct CheckPointAdd: View {
                 Image(systemName: "checkmark.circle")
                     .foregroundColor(.green)
             }.font(.largeTitle.bold())
-            
+            VStack{
             TextField("Checkpoint Name...", text: $name, axis: .vertical)
+                .focused($focnam)
                 .padding()
                 .foregroundColor(.green)
                 .bold()
                 .background{
-                        RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .foregroundColor(Color(.systemGray6))
-                            .font(.largeTitle)
-                        }
+                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                        .foregroundColor(Color(.systemGray6))
+                        .font(.largeTitle)
+                }
             HStack{
                 DatePicker("", selection: $deadline, in: Date.now...)
                     .datePickerStyle(.compact)
@@ -41,11 +43,21 @@ struct CheckPointAdd: View {
                     add.toggle()
                 } label: {
                     Image(systemName: "arrow.right.circle.fill")
+                        .foregroundColor(.black)
                         .font(.largeTitle)
-                }.offset(x: add ? 200 : 0)
-
+                }
+                
+            }
+            }.padding()
+            .background{
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(.blue.opacity(0.9))
+                    .shadow(color: .blue.opacity(0.9), radius: 10)
             }
         }.padding()
+            .onAppear(){
+                focnam = true
+            }
     }
 }
 
