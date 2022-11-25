@@ -25,6 +25,15 @@ struct ListView: View {
             }
             ForEach(assignments){assign in
                 ListItem(assign: assign)
+                    .contextMenu{
+                        Button(role: .destructive) {
+                            PersistenceController().deleteAssign(assign: assign, context: viewContext)
+                        } label: {
+                            Text("Delete")
+                            Image(systemName: "trash")
+                        }
+
+                    }
             }
         }
     }

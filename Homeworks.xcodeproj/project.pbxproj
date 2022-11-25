@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43363AA62930391C0098D4C1 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43363AA52930391C0098D4C1 /* SoundManager.swift */; };
+		43363AA829303C370098D4C1 /* BackPackZip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43363AA729303C370098D4C1 /* BackPackZip.mp3 */; };
 		43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBB292C4E1A00BC02E1 /* ListView.swift */; };
 		43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBE292C61F500BC02E1 /* NewListView.swift */; };
 		43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43363AA52930391C0098D4C1 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		43363AA729303C370098D4C1 /* BackPackZip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackPackZip.mp3; path = ../../../../Downloads/BackPackZip.mp3; sourceTree = "<group>"; };
 		43370FBB292C4E1A00BC02E1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		43370FBE292C61F500BC02E1 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
 		43AC6DF0292C22D200917BC2 /* Homeworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,8 @@
 				43370FBD292C5E9E00BC02E1 /* ListEssentials */,
 				43AC6DF7292C22D300917BC2 /* Assets.xcassets */,
 				43AC6DFC292C22D300917BC2 /* Persistence.swift */,
+				43363AA52930391C0098D4C1 /* SoundManager.swift */,
+				43363AA729303C370098D4C1 /* BackPackZip.mp3 */,
 				43AC6E01292C22D300917BC2 /* Info.plist */,
 				43AC6DFE292C22D300917BC2 /* Homeworks.xcdatamodeld */,
 				43AC6DF9292C22D300917BC2 /* Preview Content */,
@@ -149,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43363AA829303C370098D4C1 /* BackPackZip.mp3 in Resources */,
 				43AC6DFB292C22D300917BC2 /* Preview Assets.xcassets in Resources */,
 				43AC6DF8292C22D300917BC2 /* Assets.xcassets in Resources */,
 			);
@@ -163,6 +170,7 @@
 			files = (
 				43AC6DFD292C22D300917BC2 /* Persistence.swift in Sources */,
 				43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */,
+				43363AA62930391C0098D4C1 /* SoundManager.swift in Sources */,
 				43AC6E00292C22D300917BC2 /* Homeworks.xcdatamodeld in Sources */,
 				43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */,
 				43AC6DF6292C22D200917BC2 /* Home.swift in Sources */,

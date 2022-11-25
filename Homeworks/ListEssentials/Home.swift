@@ -29,22 +29,44 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                         Spacer()
-                        Button {
-                            withAnimation{
-                                addnew.toggle()
+                        Menu {
+                            Button {
+                                withAnimation {
+                                    addnew.toggle()
+                                }
+                            } label: {
+                                Text("Assignment")
+                                Image(systemName: "list.bullet.rectangle.portrait")
                             }
+                            Button {
+                                
+                            } label: {
+                                Text("Test/Quiz")
+                                Image(systemName: "list.bullet.clipboard")
+                            }
+
+
                         } label: {
                             Image(systemName: "plus")
                                 .font(.title2.bold())
-                        }.buttonStyle(.bordered)
-                        
+                        }.if(addnew) { button in
+                            button.buttonStyle(.bordered)
+                    }
+                    .if(!addnew) { button in
+                            button.buttonStyle(.borderedProminent)
+                    }
                     }.padding(.horizontal)
                     ListView(addnew: $addnew, duedate: $duedate, datepicker: $datepicker, editing: $editing)
                 }
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
                         if editing{
-                            DoneButton(date: false)
+                            DoneButton(date: 2)
+                        }
+                    }
+                    ToolbarItem(placement: .cancellationAction) {
+                        if addnew && !datepicker{
+                            DoneButton(date: 3)
                         }
                     }
                 }
@@ -63,7 +85,7 @@ struct Home: View {
                             .padding()
                             .toolbar {
                                 ToolbarItem(placement: .confirmationAction) {
-                                    DoneButton(date: true)
+                                    DoneButton(date: 1)
                                 }
                             }
                     }
@@ -85,21 +107,40 @@ struct ContentView_Previews: PreviewProvider {
 extension Home {
     @ViewBuilder
     //Done button to finish textfield or datepicker
-    func DoneButton(date: Bool) -> some View{
+    func DoneButton(date: Int) -> some View{
                 Button {
                     withAnimation {
-                        if date{
+                        if date == 1{
                             datepicker = false
-                        }else{
+                        }else if date == 2{
                             editing = false
                             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        }else{
+                            addnew = false
                         }
                     }
                 } label: {
-                    Text("Done")
-                        .bold()
-                        .foregroundColor(.black)
+                    if date == 3{
+                        Text("Cancel")
+                            .bold()
+                            .foregroundColor(.red)
+                    }else{
+                        Text("Done")
+                            .bold()
+                            .foregroundColor(.blue)
+                    }
                 }.buttonStyle(.bordered)
                     .cornerRadius(.infinity)
+    }
+}
+
+
+extension View {
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
     }
 }

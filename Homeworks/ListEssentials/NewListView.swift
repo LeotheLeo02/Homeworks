@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewListItem: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @State private var isRotating = 0.0
     @FocusState var focname: Bool
     @State var done = false
     @Binding var addnew: Bool
@@ -67,12 +68,13 @@ struct NewListItem: View {
                 Button {
                 withAnimation(.spring()){
                     done = true
+                    SoundManager.instance.playSound()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
                         Add()
                     }
                 }
             } label: {
-                Image(systemName: "arrow.down.app.fill")
+                Image(systemName: "chevron.down.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -95,10 +97,24 @@ extension NewListItem {
         RoundedRectangle(cornerRadius: 25, style: .continuous)
             .frame(width: 200, height: 200)
             .foregroundColor(.blue)
-        Image(systemName: "checkmark")
-            .resizable()
-            .frame(width: 150, height: 150)
-            .foregroundColor(.white)
+            .overlay {
+                VStack{
+                    Image(systemName: "backpack.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.white)
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.white)
+                        .rotationEffect(.degrees(isRotating))
+                        .onAppear {
+                            withAnimation(.spring()){
+                                isRotating = 360.0
+                            }
+                        }
+                }.padding()
+            }
     }
     
     func Add(){
