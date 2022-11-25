@@ -58,23 +58,7 @@ struct CheckPointAdd: View {
                         }
                     }
                 }
-            ForEach(Checkpoints.sorted()) { checkpoint in
-                HStack{
-                    Image(systemName: "mappin.and.ellipse")
-                        .foregroundColor(.red)
-                    Text(checkpoint.name)
-                    Text(checkpoint.deadline, style: .date)
-                        .foregroundColor(.red)
-                        .font(.caption)
-                    Text(checkpoint.deadline, style: .time)
-                        .foregroundColor(.red)
-                        .font(.caption)
-                }.foregroundColor(.white)
-                    .padding()
-                    .background{
-                        Capsule()
-                    }
-            }
+            ForEachList()
         }.padding()
             .onAppear(){
                 focnam = true
@@ -108,6 +92,26 @@ struct CheckPointAdd: View {
 }
 
 extension CheckPointAdd{
+    @ViewBuilder
+    func ForEachList() -> some View{
+        ForEach(Checkpoints.sorted()) { checkpoint in
+            HStack{
+                Image(systemName: "mappin.and.ellipse")
+                    .foregroundColor(.red)
+                Text(checkpoint.name)
+                Text(checkpoint.deadline, style: .date)
+                    .foregroundColor(.red)
+                    .font(.caption)
+                Text(checkpoint.deadline, style: .time)
+                    .foregroundColor(.red)
+                    .font(.caption)
+            }.foregroundColor(.white)
+                .padding()
+                .background{
+                    Capsule()
+                }
+        }
+    }
     func AddToCore(){
         for checkpoint in Checkpoints {
             PersistenceController().addCheckPoint(name: checkpoint.name, deadline: checkpoint.deadline, relateTo: assign, context: viewContext)

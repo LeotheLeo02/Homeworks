@@ -63,12 +63,11 @@ struct ListItem: View {
             } label: {
                 HStack{
                     Text("Checkpoints")
-                        .foregroundColor(.black)
-                    Image(systemName: "checkmark.circle.trianglebadge.exclamationmark")
-                        .foregroundColor(.yellow)
+                    Image(systemName: "plus")
                 }.bold()
-            }.background(in: RoundedRectangle(cornerRadius: 25, style: .continuous))
-                .buttonStyle(.bordered)
+                    .padding(.pi)
+                    .foregroundColor(.white)
+            }.background{RoundedRectangle(cornerRadius: 25, style: .continuous).foregroundColor(.red)}
                 .shadow(radius: 4)
                 .fullScreenCover(isPresented: $checkpointadd) {
                     CheckPointAdd(assign: assign)
