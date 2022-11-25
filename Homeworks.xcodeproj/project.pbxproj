@@ -48,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432327E12931469E005B6790 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				43AC6DFC292C22D300917BC2 /* Persistence.swift */,
+				43363AA52930391C0098D4C1 /* SoundManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		43370FBD292C5E9E00BC02E1 /* ListEssentials */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +91,7 @@
 				43370FBD292C5E9E00BC02E1 /* ListEssentials */,
 				43AC6DF7292C22D300917BC2 /* Assets.xcassets */,
 				43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */,
-				43AC6DFC292C22D300917BC2 /* Persistence.swift */,
-				43363AA52930391C0098D4C1 /* SoundManager.swift */,
+				432327E12931469E005B6790 /* DataManager */,
 				43363AA729303C370098D4C1 /* BackPackZip.mp3 */,
 				43AC6E01292C22D300917BC2 /* Info.plist */,
 				43AC6DFE292C22D300917BC2 /* Homeworks.xcdatamodeld */,
