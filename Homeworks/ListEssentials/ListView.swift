@@ -46,6 +46,7 @@ struct ListView_Previews: PreviewProvider {
 }
 
 struct ListItem: View {
+    @State var checkpointadd = false
     var assign: Assignment
     init(assign: Assignment) {
         self.assign = assign
@@ -57,8 +58,21 @@ struct ListItem: View {
                 .foregroundColor(.white)
                 .padding(.top, 20)
             
-            //Add Checkpoints Quick View
-            
+            Button {
+                checkpointadd.toggle()
+            } label: {
+                HStack{
+                    Text("Checkpoints")
+                        .foregroundColor(.black)
+                    Image(systemName: "checkmark.circle.trianglebadge.exclamationmark")
+                        .foregroundColor(.yellow)
+                }.bold()
+            }.background(in: RoundedRectangle(cornerRadius: 25, style: .continuous))
+                .buttonStyle(.bordered)
+                .shadow(radius: 4)
+                .fullScreenCover(isPresented: $checkpointadd) {
+                    CheckPointAdd(assign: assign)
+                }
             Spacer()
             HStack{
                 Spacer()

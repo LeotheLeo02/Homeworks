@@ -30,9 +30,6 @@ struct NewListItem: View {
                     .bold()
                     .foregroundColor(.blue)
                     .padding()
-                    
-                    //Add Checkpoints Assign View
-                    
                     Spacer()
                     HStack{
                         Text("\(duedate.formatted(date: .abbreviated, time: .shortened))")
@@ -123,5 +120,6 @@ extension NewListItem {
         name = ""
         duedate = Date.now
         done = false
+        isRotating = 0
     }
 }

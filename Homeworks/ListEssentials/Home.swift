@@ -29,32 +29,7 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                         Spacer()
-                        Menu {
-                            Button {
-                                withAnimation {
-                                    addnew.toggle()
-                                }
-                            } label: {
-                                Text("Assignment")
-                                Image(systemName: "list.bullet.rectangle.portrait")
-                            }
-                            Button {
-                                
-                            } label: {
-                                Text("Test/Quiz")
-                                Image(systemName: "list.bullet.clipboard")
-                            }
-
-
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.title2.bold())
-                        }.if(addnew) { button in
-                            button.buttonStyle(.bordered)
-                    }
-                    .if(!addnew) { button in
-                            button.buttonStyle(.borderedProminent)
-                    }
+                        MenuButtons()
                     }.padding(.horizontal)
                     ListView(addnew: $addnew, duedate: $duedate, datepicker: $datepicker, editing: $editing)
                 }
@@ -131,6 +106,33 @@ extension Home {
                     }
                 }.buttonStyle(.bordered)
                     .cornerRadius(.infinity)
+    }
+    @ViewBuilder
+    func MenuButtons() -> some View {
+        Menu {
+            Button {
+                withAnimation {
+                    addnew.toggle()
+                }
+            } label: {
+                Text("Assignment")
+                Image(systemName: "list.bullet.rectangle.portrait")
+            }
+            Button {
+                
+            } label: {
+                Text("Test/Quiz")
+                Image(systemName: "list.bullet.clipboard")
+            }
+        } label: {
+            Image(systemName: "plus")
+                .font(.title2.bold())
+        }.if(addnew) { button in
+            button.buttonStyle(.bordered)
+    }
+    .if(!addnew) { button in
+            button.buttonStyle(.borderedProminent)
+    }
     }
 }
 
