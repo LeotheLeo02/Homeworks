@@ -50,11 +50,20 @@ struct ListItem: View {
     var assign: Assignment
     init(assign: Assignment) {
         self.assign = assign
+        let nsFetchRequest = Checkpoint.fetchRequest()
+        nsFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Checkpoint.deadline, ascending: true)]
+        nsFetchRequest.predicate = NSPredicate(format: "assign = %@", assign)
+        fetchRequest = FetchRequest(fetchRequest: nsFetchRequest, animation: .default)
+    }
+    private let fetchRequest: FetchRequest<Checkpoint>
+    private var checkpoints: FetchedResults<Checkpoint> {
+        return fetchRequest.wrappedValue
     }
     var body: some View{
         VStack{
             Text("\(assign.name ?? "")")
                 .bold()
+                .font(.title2)
                 .foregroundColor(.white)
                 .padding(.top, 20)
             
@@ -72,13 +81,23 @@ struct ListItem: View {
                 .fullScreenCover(isPresented: $checkpointadd) {
                     CheckPointAdd(assign: assign)
                 }
+                .padding(.pi)
+            ForEach(checkpoints.prefix(1)){checkpoint in
+                VStack{
+                        Text(checkpoint.name ?? "")
+                    Text(checkpoint.deadline ?? .now, style: .timer)
+                        .padding(.horizontal)
+                        .background{Capsule().foregroundColor(.red)}
+                }.font(.headline).bold()
+                    .foregroundColor(.white)
+            }
             Spacer()
             HStack{
                 Spacer()
                 Text("Due Today!")
                     .bold()
                 Spacer()
-            }.padding()
+            }.padding(10)
                 .background{
                     RoundedRectangle(cornerRadius: 25)
                         .fill(.ultraThinMaterial)

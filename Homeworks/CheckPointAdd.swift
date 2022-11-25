@@ -114,7 +114,7 @@ extension CheckPointAdd{
     }
     func AddToCore(){
         for checkpoint in Checkpoints {
-            PersistenceController().addCheckPoint(name: checkpoint.name, deadline: checkpoint.deadline, relateTo: assign, context: viewContext)
+            PersistenceController().addCheckPoint(name: checkpoint.name, deadline: checkpoint.deadline, relateTo: assign)
         }
         dismiss()
     }
