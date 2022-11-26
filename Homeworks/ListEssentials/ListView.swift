@@ -46,6 +46,7 @@ struct ListView_Previews: PreviewProvider {
 }
 
 struct ListItem: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @State var checkpointadd = false
     var assign: Assignment
     init(assign: Assignment) {
@@ -61,35 +62,40 @@ struct ListItem: View {
     }
     var body: some View{
         VStack{
+            HStack{
+                Spacer()
+                Menu{
+                        Button {
+                            checkpointadd.toggle()
+                        } label: {
+                            Text("Add Checkpoint")
+                            Image(systemName: "mappin.circle")
+                        }
+                }label: {
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundColor(.white)
+                }
+                .padding(8)
+            }
             Text("\(assign.name ?? "")")
                 .bold()
-                .font(.title2)
+                .font(.title3)
                 .foregroundColor(.white)
-                .padding(.top, 20)
-            
-            Button {
-                checkpointadd.toggle()
-            } label: {
-                HStack{
-                    Text("Checkpoints")
-                    Image(systemName: "plus")
-                }.bold()
-                    .padding(.pi)
-                    .foregroundColor(.white)
-            }.background{RoundedRectangle(cornerRadius: 25, style: .continuous).foregroundColor(.red)}
-                .shadow(radius: 4)
-                .fullScreenCover(isPresented: $checkpointadd) {
-                    CheckPointAdd(assign: assign)
-                }
-                .padding(.pi)
             ForEach(checkpoints.prefix(1)){checkpoint in
-                VStack{
-                        Text(checkpoint.name ?? "")
-                    Text(checkpoint.deadline ?? .now, style: .timer)
-                        .padding(.horizontal)
-                        .background{Capsule().foregroundColor(.red)}
-                }.font(.headline).bold()
-                    .foregroundColor(.white)
+                CheckpointView(checkpoint: checkpoint)
+            }
+            if checkpoints.isEmpty{
+                HStack{
+                    Text("No Checkpoints")
+                        .foregroundColor(.white)
+                    Image(systemName: "checkmark")
+                        .foregroundColor(.green)
+                }.padding(.pi)
+                    .bold()
+                .background{
+                    RoundedRectangle(cornerRadius: 25, style: .circular)
+                        .foregroundColor(Color(.systemGray3))
+                }
             }
             Spacer()
             HStack{
@@ -99,14 +105,40 @@ struct ListItem: View {
                 Spacer()
             }.padding(10)
                 .background{
-                    RoundedRectangle(cornerRadius: 25)
+                    RoundedRectangle(cornerRadius: 5)
                         .fill(.ultraThinMaterial)
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity, maxHeight: 40)
                 }
-            .padding()
         }.frame(width: 200, height: 200)
-            .background(in: RoundedRectangle(cornerRadius: 25, style: .continuous))
+            .background(in: RoundedRectangle(cornerRadius: 5))
             .backgroundStyle(.blue.gradient)
+            .fullScreenCover(isPresented: $checkpointadd) {
+                CheckPointAdd(assign: assign)
+            }
+    }
 
+    }
+
+extension ListItem{
+    @ViewBuilder
+    func CheckpointView(checkpoint: Checkpoint) -> some View {
+        VStack{
+                Text(checkpoint.name ?? "")
+                .padding(.pi)
+            if checkpoint.deadline ?? .now < Date.now{
+                Button {
+                    PersistenceController().deleteCheckpoint(checkpoint: checkpoint, context: viewContext)
+                } label: {
+                    Image(systemName: "checkmark")
+                }.padding(.pi)
+                .background{Circle().foregroundColor(.green)}
+
+            }else{
+                Text(checkpoint.deadline ?? .now, style: .timer)
+                    .padding(.horizontal)
+                    .background{Capsule().foregroundColor(.red)}
+            }
+        }.font(.headline).bold()
+            .foregroundColor(.white)
     }
 }

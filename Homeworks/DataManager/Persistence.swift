@@ -94,4 +94,8 @@ extension PersistenceController {
             }
         }
     }
+    func deleteCheckpoint(checkpoint: Checkpoint, context: NSManagedObjectContext){
+        context.delete(checkpoint)
+        save(context: context)
+    }
 }
