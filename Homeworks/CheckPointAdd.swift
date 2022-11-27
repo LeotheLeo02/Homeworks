@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CheckPointAdd: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) private var viewContext
     var assign: Assignment
@@ -105,7 +106,7 @@ extension CheckPointAdd{
                 Text(checkpoint.deadline, style: .time)
                     .foregroundColor(.red)
                     .font(.caption)
-            }.foregroundColor(.white)
+            }.foregroundColor(colorScheme == .dark ? .black : .white)
                 .padding()
                 .background{
                     Capsule()

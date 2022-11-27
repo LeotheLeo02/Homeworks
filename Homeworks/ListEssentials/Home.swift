@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct Home: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Assignment.name, ascending: true)],
@@ -25,7 +26,7 @@ struct Home: View {
                     HStack{
                         Text("Assignments: \(assignments.count)")
                             .font(.title2.bold())
-                            .foregroundColor(.black)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                         Spacer()
@@ -122,7 +123,7 @@ extension Home {
                 
             } label: {
                 Text("Test/Quiz")
-                Image(systemName: "list.bullet.clipboard")
+                Image(systemName: "list.bullet.clipboard.fill")
             }
         } label: {
             Image(systemName: "plus")

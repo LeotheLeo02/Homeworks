@@ -48,6 +48,7 @@ struct ListView_Previews: PreviewProvider {
 struct ListItem: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State var checkpointadd = false
+    @State var viewchecks = false
     var assign: Assignment
     init(assign: Assignment) {
         self.assign = assign
@@ -69,7 +70,7 @@ struct ListItem: View {
                             checkpointadd.toggle()
                         } label: {
                             Text("Add Checkpoint")
-                            Image(systemName: "mappin.circle")
+                            Image(systemName: "mappin.and.ellipse")
                         }
                 }label: {
                     Image(systemName: "plus.circle.fill")
@@ -83,6 +84,9 @@ struct ListItem: View {
                 .foregroundColor(.white)
             ForEach(checkpoints.prefix(1)){checkpoint in
                 CheckpointView(checkpoint: checkpoint)
+                    .fullScreenCover(isPresented: $viewchecks) {
+                        ViewChecks(assign: assign)
+                    }
             }
             if checkpoints.isEmpty{
                 HStack{
@@ -134,9 +138,18 @@ extension ListItem{
                 .background{Circle().foregroundColor(.green)}
 
             }else{
-                Text(checkpoint.deadline ?? .now, style: .timer)
-                    .padding(.horizontal)
-                    .background{Capsule().foregroundColor(.red)}
+                Menu{
+                    Button {
+                        viewchecks.toggle()
+                    } label: {
+                        Text("View Checkpoints")
+                        Image(systemName: "eye")
+                    }
+                }label: {
+                    Text(checkpoint.deadline ?? .now, style: .relative)
+                        .padding(.pi)
+                        .background{Capsule().foregroundColor(.red)}
+                }
             }
         }.font(.headline).bold()
             .foregroundColor(.white)

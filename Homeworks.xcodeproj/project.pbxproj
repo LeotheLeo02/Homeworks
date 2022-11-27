@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43248C2A2932E1FB00ACD556 /* ViewChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43248C292932E1FB00ACD556 /* ViewChecks.swift */; };
 		43363AA62930391C0098D4C1 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43363AA52930391C0098D4C1 /* SoundManager.swift */; };
 		43363AA829303C370098D4C1 /* BackPackZip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43363AA729303C370098D4C1 /* BackPackZip.mp3 */; };
 		43363AAA29304ECD0098D4C1 /* CheckPointAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43248C292932E1FB00ACD556 /* ViewChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChecks.swift; sourceTree = "<group>"; };
 		43363AA52930391C0098D4C1 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		43363AA729303C370098D4C1 /* BackPackZip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackPackZip.mp3; path = ../../../../Downloads/BackPackZip.mp3; sourceTree = "<group>"; };
 		43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointAdd.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				43AC6DF5292C22D200917BC2 /* Home.swift */,
 				43370FBB292C4E1A00BC02E1 /* ListView.swift */,
 				43370FBE292C61F500BC02E1 /* NewListView.swift */,
+				43248C292932E1FB00ACD556 /* ViewChecks.swift */,
 			);
 			path = ListEssentials;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */,
 				43AC6DF6292C22D200917BC2 /* Home.swift in Sources */,
 				43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */,
+				43248C2A2932E1FB00ACD556 /* ViewChecks.swift in Sources */,
 				43363AAA29304ECD0098D4C1 /* CheckPointAdd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
