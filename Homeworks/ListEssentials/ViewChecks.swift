@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ViewChecks: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) private var viewContext
     var assign: Assignment
     init(assign: Assignment) {
@@ -68,6 +69,14 @@ struct ViewChecks: View {
                             }.buttonStyle(.bordered)
                                 .cornerRadius(.infinity)
                         }
+                    }
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Text("Leave")
+                        }.buttonStyle(.bordered)
+                            .cornerRadius(.infinity)
                     }
                 }
             }
