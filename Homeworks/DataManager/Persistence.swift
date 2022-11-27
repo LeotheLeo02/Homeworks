@@ -88,6 +88,7 @@ extension PersistenceController {
             context.performAndWait {
                 let newCheck = Checkpoint(context: context)
                 newCheck.name = name
+                newCheck.id = UUID()
                 newCheck.deadline = deadline
                 newCheck.assign = assign
                 save(context: context)
@@ -96,6 +97,11 @@ extension PersistenceController {
     }
     func deleteCheckpoint(checkpoint: Checkpoint, context: NSManagedObjectContext){
         context.delete(checkpoint)
+        save(context: context)
+    }
+    func editCheckpoint(checkpoint: Checkpoint,name: String,date: Date,  context: NSManagedObjectContext){
+        checkpoint.name = name
+        checkpoint.deadline = date
         save(context: context)
     }
 }

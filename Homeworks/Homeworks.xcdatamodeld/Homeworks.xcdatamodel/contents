@@ -7,6 +7,7 @@
     </entity>
     <entity name="Checkpoint" representedClassName="Checkpoint" syncable="YES" codeGenerationType="class">
         <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="assign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assignment" inverseName="checkpoints" inverseEntity="Assignment"/>
     </entity>
