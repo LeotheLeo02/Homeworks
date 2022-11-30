@@ -15,6 +15,7 @@ struct Home: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Assignment.name, ascending: true)],
         animation: .default)
     private var assignments: FetchedResults<Assignment>
+    @State var addtest = false
     @State var addnew = false
     @State var datepicker = false
     @State var duedate = Date.now
@@ -32,7 +33,7 @@ struct Home: View {
                         Spacer()
                         MenuButtons()
                     }.padding(.horizontal)
-                    ListView(addnew: $addnew, duedate: $duedate, datepicker: $datepicker, editing: $editing)
+                    ListView(addtest: $addtest, addnew: $addnew, duedate: $duedate, datepicker: $datepicker, editing: $editing)
                 }
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
@@ -120,7 +121,7 @@ extension Home {
                 Image(systemName: "list.bullet.rectangle.portrait")
             }
             Button {
-                
+                addtest.toggle()
             } label: {
                 Text("Test/Quiz")
                 Image(systemName: "list.bullet.clipboard.fill")

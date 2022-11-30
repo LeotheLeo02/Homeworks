@@ -14,11 +14,16 @@ struct ListView: View {
         animation: .default)
     private var assignments: FetchedResults<Assignment>
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    @Binding var addtest: Bool
     @Binding var addnew: Bool
     @Binding var duedate: Date
     @Binding var datepicker: Bool
     @Binding var editing: Bool
     var body: some View {
+        if addtest{
+            NewTestItem(addtest: $addtest, duedate: $duedate, editing: $editing, datepicker: $datepicker)
+        }
+        //ForEach for Test
         LazyVGrid(columns: columns){
             if addnew {
                 NewListItem(addnew: $addnew, duedate: $duedate, editing: $editing, datepicker: $datepicker)
@@ -147,7 +152,8 @@ extension ListItem{
                     }
                 }label: {
                     Text(checkpoint.deadline ?? .now, style: .relative)
-                        .padding(.pi)
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: true, vertical: false)
                         .background{Capsule().foregroundColor(.red)}
                 }
             }

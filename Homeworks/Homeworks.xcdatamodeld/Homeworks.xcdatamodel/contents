@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Assessment" representedClassName="Assessment" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="refurls" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Refurl" inverseName="assessment" inverseEntity="Refurl"/>
+    </entity>
     <entity name="Assignment" representedClassName="Assignment" syncable="YES" codeGenerationType="class">
         <attribute name="duedate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -10,5 +15,9 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="assign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assignment" inverseName="checkpoints" inverseEntity="Assignment"/>
+    </entity>
+    <entity name="Refurl" representedClassName="Refurl" syncable="YES" codeGenerationType="class">
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="assessment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assessment" inverseName="refurls" inverseEntity="Assessment"/>
     </entity>
 </model>

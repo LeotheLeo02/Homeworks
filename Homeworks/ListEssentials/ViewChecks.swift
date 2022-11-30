@@ -75,8 +75,7 @@ struct ViewChecks: View {
                             dismiss()
                         } label: {
                             Text("Leave")
-                        }.buttonStyle(.bordered)
-                            .cornerRadius(.infinity)
+                        }
                     }
                 }
             }

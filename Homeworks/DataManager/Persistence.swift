@@ -78,6 +78,11 @@ extension PersistenceController {
             save(context: context)
         }
     }
+    func addAsses(name: String, context: NSManagedObjectContext){
+        let newAsses = Assessment(context: context)
+        newAsses.name = name
+        save(context: context)
+    }
     func deleteAssign(assign: Assignment, context: NSManagedObjectContext){
         context.delete(assign)
         save(context: context)

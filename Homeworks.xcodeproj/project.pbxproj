@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430EE4E92937099A00B24F46 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430EE4E82937099A00B24F46 /* Example.swift */; };
 		43248C2A2932E1FB00ACD556 /* ViewChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43248C292932E1FB00ACD556 /* ViewChecks.swift */; };
 		43363AA62930391C0098D4C1 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43363AA52930391C0098D4C1 /* SoundManager.swift */; };
 		43363AA829303C370098D4C1 /* BackPackZip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43363AA729303C370098D4C1 /* BackPackZip.mp3 */; };
 		43363AAA29304ECD0098D4C1 /* CheckPointAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */; };
 		43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBB292C4E1A00BC02E1 /* ListView.swift */; };
 		43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBE292C61F500BC02E1 /* NewListView.swift */; };
+		43A3F7F02937863200B53848 /* NewTestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3F7EF2937863200B53848 /* NewTestItem.swift */; };
 		43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */; };
 		43AC6DF6292C22D200917BC2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6DF5292C22D200917BC2 /* Home.swift */; };
 		43AC6DF8292C22D300917BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AC6DF7292C22D300917BC2 /* Assets.xcassets */; };
@@ -22,12 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430EE4E82937099A00B24F46 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		43248C292932E1FB00ACD556 /* ViewChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChecks.swift; sourceTree = "<group>"; };
 		43363AA52930391C0098D4C1 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		43363AA729303C370098D4C1 /* BackPackZip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackPackZip.mp3; path = ../../../../Downloads/BackPackZip.mp3; sourceTree = "<group>"; };
 		43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointAdd.swift; sourceTree = "<group>"; };
 		43370FBB292C4E1A00BC02E1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		43370FBE292C61F500BC02E1 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
+		43A3F7EF2937863200B53848 /* NewTestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTestItem.swift; sourceTree = "<group>"; };
 		43AC6DF0292C22D200917BC2 /* Homeworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworksApp.swift; sourceTree = "<group>"; };
 		43AC6DF5292C22D200917BC2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 				43AC6DF5292C22D200917BC2 /* Home.swift */,
 				43370FBB292C4E1A00BC02E1 /* ListView.swift */,
 				43370FBE292C61F500BC02E1 /* NewListView.swift */,
+				43A3F7EF2937863200B53848 /* NewTestItem.swift */,
 				43248C292932E1FB00ACD556 /* ViewChecks.swift */,
 			);
 			path = ListEssentials;
@@ -93,6 +98,7 @@
 				43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */,
 				43370FBD292C5E9E00BC02E1 /* ListEssentials */,
 				43AC6DF7292C22D300917BC2 /* Assets.xcassets */,
+				430EE4E82937099A00B24F46 /* Example.swift */,
 				43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */,
 				432327E12931469E005B6790 /* DataManager */,
 				43363AA729303C370098D4C1 /* BackPackZip.mp3 */,
@@ -190,6 +196,8 @@
 				43AC6DF6292C22D200917BC2 /* Home.swift in Sources */,
 				43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */,
 				43248C2A2932E1FB00ACD556 /* ViewChecks.swift in Sources */,
+				43A3F7F02937863200B53848 /* NewTestItem.swift in Sources */,
+				430EE4E92937099A00B24F46 /* Example.swift in Sources */,
 				43363AAA29304ECD0098D4C1 /* CheckPointAdd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
