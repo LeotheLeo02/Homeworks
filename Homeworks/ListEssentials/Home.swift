@@ -34,6 +34,7 @@ struct Home: View {
                         MenuButtons()
                     }.padding(.horizontal)
                     ListView(addtest: $addtest, addnew: $addnew, duedate: $duedate, datepicker: $datepicker, editing: $editing)
+                        .padding()
                 }
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
@@ -42,7 +43,7 @@ struct Home: View {
                         }
                     }
                     ToolbarItem(placement: .cancellationAction) {
-                        if addnew && !datepicker{
+                        if addnew || addtest && !datepicker{
                             DoneButton(date: 3)
                         }
                     }
@@ -94,6 +95,8 @@ extension Home {
                             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                         }else{
                             addnew = false
+                            editing = false
+                            addtest = false
                         }
                     }
                 } label: {
@@ -129,12 +132,8 @@ extension Home {
         } label: {
             Image(systemName: "plus")
                 .font(.title2.bold())
-        }.if(addnew) { button in
-            button.buttonStyle(.bordered)
-    }
-    .if(!addnew) { button in
-            button.buttonStyle(.borderedProminent)
-    }
+        }.disabled(addtest || addnew)
+            .buttonStyle(.borderedProminent)
     }
 }
 

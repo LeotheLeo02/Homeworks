@@ -40,7 +40,6 @@ struct ViewChecks: View {
                                 Spacer()
                                 Text(checkpoint.deadline ?? .now, style: .timer)
                             }.font(.title.bold())
-                            .foregroundColor(.white)
                             .contextMenu{
                                 Button {
                                     editmode.toggle()
@@ -75,7 +74,8 @@ struct ViewChecks: View {
                             dismiss()
                         } label: {
                             Text("Leave")
-                        }
+                        }.buttonStyle(.bordered)
+                            .cornerRadius(.infinity)
                     }
                 }
             }
@@ -86,16 +86,15 @@ extension ViewChecks{
     @ViewBuilder
     func editView(checkpoint: Checkpoint) -> some View{
         HStack{
-            Image(systemName: "mappin.circle.fill")
-                .foregroundColor(.red)
-            TextField("", text: $name)
+            TextField("", text: $name, axis: .vertical)
+                .labelsHidden()
                 .textFieldStyle(.roundedBorder)
             Spacer()
             DatePicker("", selection: $date)
                 .labelsHidden()
                 .datePickerStyle(.compact)
         }.font(.title3.bold())
-            .foregroundColor(.white)
+            .padding()
             .onAppear(){
                 name = checkpoint.name ?? ""
                 date = checkpoint.deadline ?? .now

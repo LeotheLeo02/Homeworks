@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewListItem: View {
+struct NewAssignItem: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var isRotating = 0.0
     @FocusState var focname: Bool
@@ -47,15 +47,16 @@ struct NewListItem: View {
                                 .foregroundColor(.black)
                         }
                         .buttonStyle(.borderedProminent)
-                    }.padding()
+                        .cornerRadius(.infinity)
+                    }.padding(.pi)
                         .background{
                             RoundedRectangle(cornerRadius: 25)
                                 .fill(.ultraThinMaterial)
                                 .frame(maxWidth: .infinity)
                         }
-                        .padding()
-                }.frame(width: 200, height: 200)
-                    .background(in: RoundedRectangle(cornerRadius: 25, style: .continuous))
+                        .padding(.pi)
+                }.frame(width: 170, height: 170)
+                    .background(in: RoundedRectangle(cornerRadius: 5))
                     .backgroundStyle(.blue.gradient)
                 if done {
                     Cover()
@@ -74,7 +75,7 @@ struct NewListItem: View {
                 Image(systemName: "chevron.down.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
-            }
+            }.disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
         }
         }.onAppear(){
             focname = true
@@ -88,12 +89,12 @@ struct NewListItem_Previews: PreviewProvider {
     }
 }
 
-extension NewListItem {
+extension NewAssignItem {
     @ViewBuilder
     func Cover() -> some View{
-        RoundedRectangle(cornerRadius: 25, style: .continuous)
-            .frame(width: 200, height: 200)
-            .foregroundColor(.blue)
+        RoundedRectangle(cornerRadius: 5)
+            .frame(width: 170, height: 170)
+            .foregroundStyle(.blue.gradient)
             .overlay {
                 VStack{
                     Image(systemName: "backpack.fill")

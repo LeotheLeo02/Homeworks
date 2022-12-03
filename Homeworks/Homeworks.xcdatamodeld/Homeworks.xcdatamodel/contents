@@ -17,6 +17,8 @@
         <relationship name="assign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assignment" inverseName="checkpoints" inverseEntity="Assignment"/>
     </entity>
     <entity name="Refurl" representedClassName="Refurl" syncable="YES" codeGenerationType="class">
+        <attribute name="dateadded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
         <relationship name="assessment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assessment" inverseName="refurls" inverseEntity="Assessment"/>
     </entity>

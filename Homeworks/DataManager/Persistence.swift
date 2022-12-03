@@ -78,16 +78,32 @@ extension PersistenceController {
             save(context: context)
         }
     }
-    func addAsses(name: String, context: NSManagedObjectContext){
+    func addAsses(name: String, testdate: Date, context: NSManagedObjectContext){
         let newAsses = Assessment(context: context)
         newAsses.name = name
+        newAsses.date = testdate
+        save(context: context)
+    }
+    func addURL(url: URL,name: String ,relateTo test: Assessment){
+        if let context = test.managedObjectContext{
+            context.performAndWait {
+                let newurl = Refurl(context: context)
+                newurl.assessment = test
+                newurl.name = name
+                newurl.url = url
+                newurl.dateadded = Date.now
+                save(context: context)
+            }
+        }
+    }
+    func deleteTest(assesment: Assessment, context: NSManagedObjectContext){
+        context.delete(assesment)
         save(context: context)
     }
     func deleteAssign(assign: Assignment, context: NSManagedObjectContext){
         context.delete(assign)
         save(context: context)
     }
-    
     func addCheckPoint(name: String, deadline: Date, relateTo assign: Assignment){
         if let context = assign.managedObjectContext{
             context.performAndWait {
