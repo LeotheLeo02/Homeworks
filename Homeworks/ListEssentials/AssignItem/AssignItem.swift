@@ -107,6 +107,7 @@ extension AssignItem{
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
+            //Change to Checkpoint Name
         }.font(.headline).bold()
             .foregroundColor(.white)
     }
