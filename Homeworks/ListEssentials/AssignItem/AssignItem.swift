@@ -42,7 +42,7 @@ struct AssignItem: View {
             }
             Text("\(assign.name ?? "")")
                 .bold()
-                .font(.title3)
+                .font(.headline)
                 .foregroundColor(.white)
             ForEach(checkpoints.prefix(1)){checkpoint in
                 CheckpointView(checkpoint: checkpoint)
@@ -82,6 +82,7 @@ extension AssignItem{
     func CheckpointView(checkpoint: Checkpoint) -> some View {
         VStack{
                 Text(checkpoint.name ?? "")
+                .font(.subheadline)
                 .foregroundColor(.black.opacity(0.5))
                 .padding(.pi)
             if checkpoint.deadline ?? .now < Date.now{
