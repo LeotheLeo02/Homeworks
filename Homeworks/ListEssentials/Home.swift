@@ -59,7 +59,7 @@ struct Home: View {
                             .datePickerStyle(.wheel)
                             .labelsHidden()
                             .padding()
-                            .background(.white,in: RoundedRectangle (cornerRadius: 12, style: .continuous))
+                            .background(colorScheme == .dark ? .black:.white,in: RoundedRectangle (cornerRadius: 12, style: .continuous))
                             .padding()
                             .toolbar {
                                 ToolbarItem(placement: .confirmationAction) {

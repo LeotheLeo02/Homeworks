@@ -43,7 +43,7 @@ struct NewTestItem: View {
                             .foregroundColor(.black)
                     }
                     .padding(5)
-                    .background(.gray)
+                    .background(.blue)
                     .cornerRadius(25)
                 }.padding()
                     .background{
@@ -54,7 +54,7 @@ struct NewTestItem: View {
                     .padding()
             }.frame(maxWidth: .infinity, maxHeight: 200)
                 .background(in: RoundedRectangle(cornerRadius: 5))
-                .backgroundStyle(.gray.gradient)
+                .backgroundStyle(.blue.gradient)
                 .onAppear(){
                     focname.toggle()
                 }
@@ -89,7 +89,7 @@ extension NewTestItem {
     func Cover() -> some View{
         RoundedRectangle(cornerRadius: 5)
             .frame(maxWidth: .infinity, maxHeight: 200)
-            .foregroundStyle(.gray.gradient)
+            .foregroundStyle(.blue.gradient)
             .overlay {
                 VStack{
                     Image(systemName: "clipboard")

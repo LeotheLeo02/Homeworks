@@ -13,6 +13,7 @@
 		43363AAA29304ECD0098D4C1 /* CheckPointAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */; };
 		43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBB292C4E1A00BC02E1 /* ListView.swift */; };
 		43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBE292C61F500BC02E1 /* NewListView.swift */; };
+		43541553293D579000475620 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43541552293D579000475620 /* Contact.swift */; };
 		439A9F49293BC00200D89F1B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A9F48293BC00200D89F1B /* TestView.swift */; };
 		439A9F4C293BC41B00D89F1B /* AssignItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A9F4B293BC41B00D89F1B /* AssignItem.swift */; };
 		439A9F50293BC4AF00D89F1B /* URLDropArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A9F4F293BC4AF00D89F1B /* URLDropArray.swift */; };
@@ -32,11 +33,12 @@
 		43363AA929304ECD0098D4C1 /* CheckPointAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointAdd.swift; sourceTree = "<group>"; };
 		43370FBB292C4E1A00BC02E1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		43370FBE292C61F500BC02E1 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
+		43541552293D579000475620 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		439A9F48293BC00200D89F1B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		439A9F4B293BC41B00D89F1B /* AssignItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItem.swift; sourceTree = "<group>"; };
 		439A9F4F293BC4AF00D89F1B /* URLDropArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDropArray.swift; sourceTree = "<group>"; };
 		43A3F7EF2937863200B53848 /* NewTestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTestItem.swift; sourceTree = "<group>"; };
-		43AC6DF0292C22D200917BC2 /* Homeworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43AC6DF0292C22D200917BC2 /* HomeworkBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworksApp.swift; sourceTree = "<group>"; };
 		43AC6DF5292C22D200917BC2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		43AC6DF7292C22D300917BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,7 +119,7 @@
 		43AC6DF1292C22D200917BC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43AC6DF0292C22D200917BC2 /* Homeworks.app */,
+				43AC6DF0292C22D200917BC2 /* HomeworkBox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 			children = (
 				43AC6E07292C22E300917BC2 /* Homeworks.entitlements */,
 				43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */,
+				43541552293D579000475620 /* Contact.swift */,
 				43370FBD292C5E9E00BC02E1 /* ListEssentials */,
 				43AC6DF7292C22D300917BC2 /* Assets.xcassets */,
 				439A9F4E293BC49000D89F1B /* Checkpoints */,
@@ -150,9 +153,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43AC6DEF292C22D200917BC2 /* Homeworks */ = {
+		43AC6DEF292C22D200917BC2 /* HomeworkBox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43AC6E04292C22D300917BC2 /* Build configuration list for PBXNativeTarget "Homeworks" */;
+			buildConfigurationList = 43AC6E04292C22D300917BC2 /* Build configuration list for PBXNativeTarget "HomeworkBox" */;
 			buildPhases = (
 				43AC6DEC292C22D200917BC2 /* Sources */,
 				43AC6DED292C22D200917BC2 /* Frameworks */,
@@ -162,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = Homeworks;
+			name = HomeworkBox;
 			productName = Homeworks;
-			productReference = 43AC6DF0292C22D200917BC2 /* Homeworks.app */;
+			productReference = 43AC6DF0292C22D200917BC2 /* HomeworkBox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +185,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 43AC6DEB292C22D200917BC2 /* Build configuration list for PBXProject "Homeworks" */;
+			buildConfigurationList = 43AC6DEB292C22D200917BC2 /* Build configuration list for PBXProject "HomeworkBox" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,7 +198,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43AC6DEF292C22D200917BC2 /* Homeworks */,
+				43AC6DEF292C22D200917BC2 /* HomeworkBox */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +227,7 @@
 				43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */,
 				43363AA62930391C0098D4C1 /* SoundManager.swift in Sources */,
 				43AC6E00292C22D300917BC2 /* Homeworks.xcdatamodeld in Sources */,
+				43541553293D579000475620 /* Contact.swift in Sources */,
 				43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */,
 				43AC6DF6292C22D200917BC2 /* Home.swift in Sources */,
 				439A9F4C293BC41B00D89F1B /* AssignItem.swift in Sources */,
@@ -364,6 +368,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Homeworks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "HomeworkBox Beta";
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=iphoneos*]" = "HomeworkBox Beta";
+				INFOPLIST_KEY_NSContactsUsageDescription = "To acess contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -395,6 +402,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Homeworks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "HomeworkBox Beta";
+				INFOPLIST_KEY_NSContactsUsageDescription = "To acess contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -416,7 +425,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43AC6DEB292C22D200917BC2 /* Build configuration list for PBXProject "Homeworks" */ = {
+		43AC6DEB292C22D200917BC2 /* Build configuration list for PBXProject "HomeworkBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43AC6E02292C22D300917BC2 /* Debug */,
@@ -425,7 +434,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43AC6E04292C22D300917BC2 /* Build configuration list for PBXNativeTarget "Homeworks" */ = {
+		43AC6E04292C22D300917BC2 /* Build configuration list for PBXNativeTarget "HomeworkBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43AC6E05292C22D300917BC2 /* Debug */,

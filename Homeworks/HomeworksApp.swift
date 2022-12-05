@@ -13,7 +13,7 @@ struct HomeworksApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Home()
+            Contact()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

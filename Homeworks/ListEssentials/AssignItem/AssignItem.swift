@@ -38,7 +38,8 @@ struct AssignItem: View {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(.white)
                 }
-                .padding(5)
+                .padding(.top, 8)
+                .padding(.trailing, 8)
             }
             Text("\(assign.name ?? "")")
                 .bold()
@@ -81,10 +82,6 @@ extension AssignItem{
     @ViewBuilder
     func CheckpointView(checkpoint: Checkpoint) -> some View {
         VStack{
-                Text(checkpoint.name ?? "")
-                .font(.subheadline)
-                .foregroundColor(.black.opacity(0.5))
-                .padding(.pi)
             if checkpoint.deadline ?? .now < Date.now{
                 Button {
                     PersistenceController().deleteCheckpoint(checkpoint: checkpoint, context: viewContext)
@@ -102,10 +99,17 @@ extension AssignItem{
                         Image(systemName: "eye")
                     }
                 }label: {
-                    Text(checkpoint.deadline ?? .now, style: .relative)
-                        .font(.caption2)
-                        .foregroundColor(.black.opacity(0.6))
-                        .fixedSize(horizontal: true, vertical: false)
+                    VStack{
+                        Text(checkpoint.name ?? "")
+                            .font(.subheadline)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .foregroundColor(.black.opacity(0.5))
+                            .padding(.pi)
+                        Text(checkpoint.deadline ?? .now, style: .relative)
+                            .font(.caption2)
+                            .foregroundColor(.black.opacity(0.6))
+                            .fixedSize(horizontal: true, vertical: false)
+                    }
                 }
             }
             //Change to Checkpoint Name

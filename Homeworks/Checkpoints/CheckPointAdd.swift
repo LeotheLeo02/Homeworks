@@ -40,13 +40,7 @@ struct CheckPointAdd: View {
             }.padding()
                 .background{
                     RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(.red.opacity(0.8))
-                        .if(add, transform: { View in
-                            View.shadow(color: .green, radius: 10)
-                        })
-                            .if(!add, transform: { View in
-                                View.shadow(color: .red.opacity(0.8), radius: 10)
-                            })
+                        .foregroundColor(.red)
                 }
                 .overlay {
                     if add{
@@ -95,6 +89,18 @@ struct CheckPointAdd: View {
 extension CheckPointAdd{
     @ViewBuilder
     func ForEachList() -> some View{
+        HStack{
+            Text("Checkpoints:")
+                .underline()
+                .bold()
+            Spacer()
+        }.padding()
+        Divider()
+        if Checkpoints.isEmpty{
+            Text("No Checkpoints Being Added")
+                .foregroundColor(.gray)
+                .italic()
+        }
         ForEach(Checkpoints.sorted()) { checkpoint in
             HStack{
                 Image(systemName: "mappin.and.ellipse")
@@ -128,7 +134,7 @@ extension CheckPointAdd{
                     .labelsHidden()
                     .padding()
             }else{
-                TextField("Checkpoint Name...", text: $name, axis: .vertical)
+                TextField("Checkpoint Name...", text: $name)
                     .focused($focnam)
                     .padding()
                     .foregroundColor(.red)
@@ -156,7 +162,6 @@ extension CheckPointAdd{
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(.green)
-                        .shadow(radius: 8)
                         .font(.largeTitle)
                 }
             }else{
@@ -166,9 +171,14 @@ extension CheckPointAdd{
                     }
                 } label: {
                     Image(systemName: "arrow.right.circle.fill")
-                        .foregroundColor(.black)
+                        .if(name.trimmingCharacters(in: .whitespaces).isEmpty, transform: { Image in
+                            Image.foregroundStyle(.ultraThinMaterial)
+                        })
+                        .if(!name.trimmingCharacters(in: .whitespaces).isEmpty, transform: { Image in
+                                Image.foregroundColor(.black)
+                        })
                         .font(.largeTitle)
-                }
+                }.disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
             }
         }
     }

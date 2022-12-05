@@ -24,10 +24,10 @@ struct NewAssignItem: View {
                     TextField("Name", text: $name, onEditingChanged: { bool in
                         editing = bool
                     })
+                    .font(.subheadline.bold())
                     .focused($focname)
                     .submitLabel(.done)
                     .textFieldStyle(.roundedBorder)
-                    .bold()
                     .foregroundColor(.blue)
                     .padding()
                     Spacer()
@@ -48,9 +48,9 @@ struct NewAssignItem: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .cornerRadius(.infinity)
-                    }.padding(.pi)
+                    }.padding(10)
                         .background{
-                            RoundedRectangle(cornerRadius: 25)
+                            RoundedRectangle(cornerRadius: 5)
                                 .fill(.ultraThinMaterial)
                                 .frame(maxWidth: .infinity)
                         }
