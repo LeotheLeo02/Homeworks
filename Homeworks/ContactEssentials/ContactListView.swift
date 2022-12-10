@@ -22,6 +22,14 @@ struct ContactListView: View {
                 }
                 ForEach(groupchats){groupchat in
                     GroupChatView(groupchat: groupchat)
+                        .contextMenu{
+                            Button {
+                                PersistenceController().deleteGroupChat(groupchat: groupchat, context: viewContext)
+                            } label: {
+                                Text("Delete")
+                            }
+
+                        }
                 }
             }
             .toolbar(content: {

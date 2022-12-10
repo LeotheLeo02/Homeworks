@@ -35,8 +35,11 @@ struct GroupChatView: View{
         }
             HStack{
                 ForEach(contacts){contact in
-                    Image(systemName: "person.circle.fill")
-                        .font(.title)
+                    let uiimage =  UIImage(data: contact.image ?? .init())
+                    Image(uiImage: uiimage ?? .remove)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
                     Text(contact.phonenumber ?? "")
                 }
             }

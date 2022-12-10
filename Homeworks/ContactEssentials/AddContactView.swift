@@ -22,7 +22,7 @@ struct AddContactView: View {
                     .onSubmit {
                         contact = contacts.first ?? .init()
                         if !contacts.isEmpty{
-                            PersistenceController().addContact(name: contact.givenName, phonenumber: ShowPhoneNumber(contact: contact), relateTo: groupchat)
+                            PersistenceController().addContact(name: contact.givenName, phonenumber: ShowPhoneNumber(contact: contact), image: contact.imageData ?? .init(), relateTo: groupchat)
                             addcontact.toggle()
                         }
                     }
@@ -56,7 +56,7 @@ struct AddContactView: View {
     func fetchSpecificContacts(searchtext: String) async{
         let store  = CNContactStore()
         var tempcontacts: [CNContact] = []
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactImageDataKey] as [CNKeyDescriptor]
         let predicate = CNContact.predicateForContacts(matchingName: searchtext)
         do{
                 tempcontacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
@@ -69,7 +69,7 @@ struct AddContactView: View {
     func fetchAllContacts() async{
         let store = CNContactStore()
         var tempcontacts: [CNContact] = []
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactImageDataKey] as [CNKeyDescriptor]
         let fetchrequest = CNContactFetchRequest(keysToFetch: keys)
         do{
             try store.enumerateContacts(with: fetchrequest, usingBlock: { contactenum, result in

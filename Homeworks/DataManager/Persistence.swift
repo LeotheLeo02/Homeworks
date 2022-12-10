@@ -130,15 +130,20 @@ extension PersistenceController {
         groupchat.name = name
         save(context: context)
     }
-    func addContact(name: String, phonenumber: String, relateTo groupchat: GroupChat){
+    func addContact(name: String, phonenumber: String, image: Data, relateTo groupchat: GroupChat){
         if let context = groupchat.managedObjectContext{
             context.performAndWait {
                 let newContact = Contact(context: context)
                 newContact.name = name
+                newContact.image = image
                 newContact.phonenumber = phonenumber
                 newContact.groupchat = groupchat
                 save(context: context)
             }
         }
+    }
+    func deleteGroupChat(groupchat: GroupChat, context: NSManagedObjectContext){
+        context.delete(groupchat)
+        save(context: context)
     }
 }
