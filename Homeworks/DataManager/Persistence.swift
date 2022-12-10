@@ -125,4 +125,20 @@ extension PersistenceController {
         checkpoint.deadline = date
         save(context: context)
     }
+    func addGroupChat(name: String, context: NSManagedObjectContext){
+        let groupchat = GroupChat(context: context)
+        groupchat.name = name
+        save(context: context)
+    }
+    func addContact(name: String, phonenumber: String, relateTo groupchat: GroupChat){
+        if let context = groupchat.managedObjectContext{
+            context.performAndWait {
+                let newContact = Contact(context: context)
+                newContact.name = name
+                newContact.phonenumber = phonenumber
+                newContact.groupchat = groupchat
+                save(context: context)
+            }
+        }
+    }
 }

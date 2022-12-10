@@ -16,6 +16,15 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="assign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assignment" inverseName="checkpoints" inverseEntity="Assignment"/>
     </entity>
+    <entity name="Contact" representedClassName="Contact" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phonenumber" optional="YES" attributeType="String"/>
+        <relationship name="groupchat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupChat" inverseName="contacts" inverseEntity="GroupChat"/>
+    </entity>
+    <entity name="GroupChat" representedClassName="GroupChat" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="contacts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="groupchat" inverseEntity="Contact"/>
+    </entity>
     <entity name="Refurl" representedClassName="Refurl" syncable="YES" codeGenerationType="class">
         <attribute name="dateadded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
