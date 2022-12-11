@@ -117,7 +117,7 @@ extension NewTestItem {
     func Add(){
         editing = false
         addtest = false
-        PersistenceController().addAsses(name: name, testdate: duedate, context: viewContext)
+        AssesController().addAsses(name: name, testdate: duedate, context: viewContext)
         name = ""
         duedate = Date.now
         done = false

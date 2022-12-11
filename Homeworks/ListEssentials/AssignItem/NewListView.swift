@@ -117,7 +117,7 @@ extension NewAssignItem {
     
     func Add(){
         addnew = false
-        PersistenceController().addAssign(name: name, duedate: duedate, context: viewContext)
+        AssignController().addAssign(name: name, duedate: duedate, context: viewContext)
         name = ""
         duedate = Date.now
         done = false

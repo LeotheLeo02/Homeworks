@@ -49,7 +49,7 @@ struct ViewChecks: View {
                                     Image(systemName: "pencil")
                                 }
                                 Button(role: .destructive) {
-                                    PersistenceController().deleteCheckpoint(checkpoint: checkpoint, context: viewContext)
+                                    AssignController().deleteCheckpoint(checkpoint: checkpoint, context: viewContext)
                                 } label: {
                                     Text("Delete")
                                     Image(systemName: "trash")
@@ -100,10 +100,10 @@ extension ViewChecks{
                 date = checkpoint.deadline ?? .now
             }
             .onChange(of: name) { newValue in
-                PersistenceController().editCheckpoint(checkpoint: checkpoint, name: name, date: date, context: viewContext)
+                AssignController().editCheckpoint(checkpoint: checkpoint, name: name, date: date, context: viewContext)
             }
             .onChange(of: date) { newValue in
-                PersistenceController().editCheckpoint(checkpoint: checkpoint, name: name, date: date, context: viewContext)
+                AssignController().editCheckpoint(checkpoint: checkpoint, name: name, date: date, context: viewContext)
             }
     }
 }

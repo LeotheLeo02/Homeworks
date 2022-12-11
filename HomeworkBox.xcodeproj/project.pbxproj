@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		43248C2A2932E1FB00ACD556 /* ViewChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43248C292932E1FB00ACD556 /* ViewChecks.swift */; };
-		43253A012944079C008AD914 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43253A002944079C008AD914 /* TabManager.swift */; };
 		43253A0429440FAA008AD914 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43253A0329440FAA008AD914 /* ContactListView.swift */; };
 		43253A06294412DA008AD914 /* GroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43253A05294412DA008AD914 /* GroupChatView.swift */; };
 		43363AA62930391C0098D4C1 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43363AA52930391C0098D4C1 /* SoundManager.swift */; };
@@ -17,6 +16,13 @@
 		43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBB292C4E1A00BC02E1 /* ListView.swift */; };
 		43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43370FBE292C61F500BC02E1 /* NewListView.swift */; };
 		43541553293D579000475620 /* ContactPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43541552293D579000475620 /* ContactPickerView.swift */; };
+		43659F8C294583530052A738 /* AssignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43659F8B294583530052A738 /* AssignController.swift */; };
+		43659F8E294584340052A738 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43659F8D294584340052A738 /* TestController.swift */; };
+		43659F902945861A0052A738 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43659F8F2945861A0052A738 /* MainView.swift */; };
+		43659F94294587E10052A738 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43659F93294587E10052A738 /* TabButton.swift */; };
+		43659F96294589F20052A738 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43659F95294589F20052A738 /* CustomCorners.swift */; };
+		43659F9829458D4E0052A738 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43659F9729458D4E0052A738 /* SideMenu.swift */; };
+		43659F9A29458DF90052A738 /* SideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43659F9929458DF90052A738 /* SideManager.swift */; };
 		4399170F29454C40005BCFD5 /* PDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399170E29454C40005BCFD5 /* PDFKit.swift */; };
 		439A9F49293BC00200D89F1B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A9F48293BC00200D89F1B /* TestView.swift */; };
 		439A9F4C293BC41B00D89F1B /* AssignItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A9F4B293BC41B00D89F1B /* AssignItem.swift */; };
@@ -32,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		43248C292932E1FB00ACD556 /* ViewChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChecks.swift; sourceTree = "<group>"; };
-		43253A002944079C008AD914 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
 		43253A0329440FAA008AD914 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 		43253A05294412DA008AD914 /* GroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatView.swift; sourceTree = "<group>"; };
 		43363AA52930391C0098D4C1 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -41,6 +46,13 @@
 		43370FBB292C4E1A00BC02E1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		43370FBE292C61F500BC02E1 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
 		43541552293D579000475620 /* ContactPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerView.swift; sourceTree = "<group>"; };
+		43659F8B294583530052A738 /* AssignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignController.swift; sourceTree = "<group>"; };
+		43659F8D294584340052A738 /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
+		43659F8F2945861A0052A738 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		43659F93294587E10052A738 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		43659F95294589F20052A738 /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		43659F9729458D4E0052A738 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		43659F9929458DF90052A738 /* SideManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideManager.swift; sourceTree = "<group>"; };
 		4399170E29454C40005BCFD5 /* PDFKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKit.swift; sourceTree = "<group>"; };
 		439A9F48293BC00200D89F1B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		439A9F4B293BC41B00D89F1B /* AssignItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItem.swift; sourceTree = "<group>"; };
@@ -72,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				43AC6DFC292C22D300917BC2 /* Persistence.swift */,
+				43659F8B294583530052A738 /* AssignController.swift */,
+				43659F8D294584340052A738 /* TestController.swift */,
 				43363AA52930391C0098D4C1 /* SoundManager.swift */,
 			);
 			path = DataManager;
@@ -95,6 +109,18 @@
 				439A9F4D293BC47700D89F1B /* TestItem */,
 			);
 			path = ListEssentials;
+			sourceTree = "<group>";
+		};
+		43659F9B294594230052A738 /* SideMenuManager */ = {
+			isa = PBXGroup;
+			children = (
+				43659F8F2945861A0052A738 /* MainView.swift */,
+				43659F9929458DF90052A738 /* SideManager.swift */,
+				43659F93294587E10052A738 /* TabButton.swift */,
+				43659F95294589F20052A738 /* CustomCorners.swift */,
+				43659F9729458D4E0052A738 /* SideMenu.swift */,
+			);
+			path = SideMenuManager;
 			sourceTree = "<group>";
 		};
 		4399171029455B88005BCFD5 /* Controllers */ = {
@@ -154,8 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				43AC6E07292C22E300917BC2 /* Homeworks.entitlements */,
-				43253A002944079C008AD914 /* TabManager.swift */,
 				43AC6DF3292C22D200917BC2 /* HomeworksApp.swift */,
+				43659F9B294594230052A738 /* SideMenuManager */,
 				43253A0229440F85008AD914 /* ContactEssentials */,
 				43370FBD292C5E9E00BC02E1 /* ListEssentials */,
 				43AC6DF7292C22D300917BC2 /* Assets.xcassets */,
@@ -252,19 +278,25 @@
 				439A9F49293BC00200D89F1B /* TestView.swift in Sources */,
 				43AC6DFD292C22D300917BC2 /* Persistence.swift in Sources */,
 				439A9F50293BC4AF00D89F1B /* URLDropArray.swift in Sources */,
+				43659F9829458D4E0052A738 /* SideMenu.swift in Sources */,
+				43659F902945861A0052A738 /* MainView.swift in Sources */,
 				43253A0429440FAA008AD914 /* ContactListView.swift in Sources */,
 				43370FBF292C61F500BC02E1 /* NewListView.swift in Sources */,
 				43363AA62930391C0098D4C1 /* SoundManager.swift in Sources */,
-				43253A012944079C008AD914 /* TabManager.swift in Sources */,
+				43659F96294589F20052A738 /* CustomCorners.swift in Sources */,
+				43659F9A29458DF90052A738 /* SideManager.swift in Sources */,
 				43AC6E00292C22D300917BC2 /* Homeworks.xcdatamodeld in Sources */,
 				43541553293D579000475620 /* ContactPickerView.swift in Sources */,
 				43370FBC292C4E1A00BC02E1 /* ListView.swift in Sources */,
 				4399170F29454C40005BCFD5 /* PDFKit.swift in Sources */,
 				43253A06294412DA008AD914 /* GroupChatView.swift in Sources */,
 				43AC6DF6292C22D200917BC2 /* Home.swift in Sources */,
+				43659F8C294583530052A738 /* AssignController.swift in Sources */,
 				439A9F4C293BC41B00D89F1B /* AssignItem.swift in Sources */,
+				43659F8E294584340052A738 /* TestController.swift in Sources */,
 				43AC6DF4292C22D200917BC2 /* HomeworksApp.swift in Sources */,
 				43248C2A2932E1FB00ACD556 /* ViewChecks.swift in Sources */,
+				43659F94294587E10052A738 /* TabButton.swift in Sources */,
 				43A3F7F02937863200B53848 /* NewTestItem.swift in Sources */,
 				43363AAA29304ECD0098D4C1 /* CheckPointAdd.swift in Sources */,
 			);

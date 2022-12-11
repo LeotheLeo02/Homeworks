@@ -84,7 +84,7 @@ extension AssignItem{
         VStack{
             if checkpoint.deadline ?? .now < Date.now{
                 Button {
-                    PersistenceController().deleteCheckpoint(checkpoint: checkpoint, context: viewContext)
+                    AssignController().deleteCheckpoint(checkpoint: checkpoint, context: viewContext)
                 } label: {
                     Image(systemName: "checkmark")
                 }.padding(.pi)

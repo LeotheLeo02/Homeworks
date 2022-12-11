@@ -57,7 +57,7 @@ struct URLDropArray: View {
         .padding()
         .alert("Add Link", isPresented: $addname, actions: {
             TextField("Name", text: $name)
-            Button("Add", action: {PersistenceController().addURL(url: links.first!, name: name, relateTo: test)})
+            Button("Add", action: {AssesController().addURL(url: links.first!, name: name, relateTo: test)})
             Button("Cancel", role: .cancel, action: {})
         }, message: {
             Text("Enter Name For URL")

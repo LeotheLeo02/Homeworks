@@ -69,62 +69,6 @@ extension PersistenceController {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-    
-    func addAssign(name: String, duedate: Date, context: NSManagedObjectContext) {
-        withAnimation {
-            let newAssign = Assignment(context: context)
-            newAssign.name = name
-            newAssign.duedate = duedate
-            save(context: context)
-        }
-    }
-    func addAsses(name: String, testdate: Date, context: NSManagedObjectContext){
-        let newAsses = Assessment(context: context)
-        newAsses.name = name
-        newAsses.date = testdate
-        save(context: context)
-    }
-    func addURL(url: URL,name: String ,relateTo test: Assessment){
-        if let context = test.managedObjectContext{
-            context.performAndWait {
-                let newurl = Refurl(context: context)
-                newurl.assessment = test
-                newurl.name = name
-                newurl.url = url
-                newurl.dateadded = Date.now
-                save(context: context)
-            }
-        }
-    }
-    func deleteTest(assesment: Assessment, context: NSManagedObjectContext){
-        context.delete(assesment)
-        save(context: context)
-    }
-    func deleteAssign(assign: Assignment, context: NSManagedObjectContext){
-        context.delete(assign)
-        save(context: context)
-    }
-    func addCheckPoint(name: String, deadline: Date, relateTo assign: Assignment){
-        if let context = assign.managedObjectContext{
-            context.performAndWait {
-                let newCheck = Checkpoint(context: context)
-                newCheck.name = name
-                newCheck.id = UUID()
-                newCheck.deadline = deadline
-                newCheck.assign = assign
-                save(context: context)
-            }
-        }
-    }
-    func deleteCheckpoint(checkpoint: Checkpoint, context: NSManagedObjectContext){
-        context.delete(checkpoint)
-        save(context: context)
-    }
-    func editCheckpoint(checkpoint: Checkpoint,name: String,date: Date,  context: NSManagedObjectContext){
-        checkpoint.name = name
-        checkpoint.deadline = date
-        save(context: context)
-    }
     func addGroupChat(name: String, context: NSManagedObjectContext){
         let groupchat = GroupChat(context: context)
         groupchat.name = name

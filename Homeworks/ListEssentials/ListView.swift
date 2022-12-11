@@ -32,7 +32,7 @@ struct ListView: View {
             TestView(assesment: test)
                 .contextMenu{
                     Button(role: .destructive) {
-                        PersistenceController().deleteTest(assesment: test, context: viewContext)
+                        AssesController().deleteTest(assesment: test, context: viewContext)
                     } label: {
                         Text("Delete")
                         Image(systemName: "trash")
@@ -48,7 +48,7 @@ struct ListView: View {
                 AssignItem(assign: assign)
                     .contextMenu{
                         Button(role: .destructive) {
-                            PersistenceController().deleteAssign(assign: assign, context: viewContext)
+                            AssignController().deleteAssign(assign: assign, context: viewContext)
                         } label: {
                             Text("Delete")
                             Image(systemName: "trash")
