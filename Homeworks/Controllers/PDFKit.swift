@@ -7,14 +7,6 @@
 import SwiftUI
 import PDFKit
 
-struct ContentView: View {
-    var url: URL
-    var body: some View {
-        VStack {
-            PDFKitRepresentedView(url)
-        }
-    }
-}
 struct PDFKitRepresentedView: UIViewRepresentable {
     let url: URL
 
