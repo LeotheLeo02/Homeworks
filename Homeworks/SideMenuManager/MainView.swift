@@ -60,7 +60,7 @@ struct MainView: View {
                                     .frame(width: 30, height: 3)
                                     .offset(y: showMenu ? -8 : 0)
                             }.rotationEffect(.init(degrees: showMenu ? 50 : 0))
-                        }
+                        }.padding(.horizontal)
                     })
                     .padding()
                     
