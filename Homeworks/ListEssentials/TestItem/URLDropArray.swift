@@ -23,7 +23,6 @@ struct URLDropArray: View {
     @State private var name = ""
     @State private var addname = false
     @State private var links: [URL] = []
-    
     var body: some View {
         Image(systemName: "cursorarrow.and.square.on.square.dashed")
             .bold()
@@ -32,11 +31,24 @@ struct URLDropArray: View {
         ScrollView(.horizontal){
             HStack{
             ForEach(urls){url in
-                Link(url.name ?? "", destination: url.url!)
-                    .onDrag { NSItemProvider(object: url.url! as NSURL) }
-                    .padding(.horizontal, .pi)
-                    .background(Color(.white))
-                    .cornerRadius(20)
+                if url.url?.pathExtension == "pdf"{
+                    NavigationLink(destination: PDFKitRepresentedView(url.url ?? .downloadsDirectory)) {
+                    HStack{
+                        Text(url.name ?? "")
+                        Image(systemName: "doc.fill")
+                            .onDrag { NSItemProvider(object: url.url! as NSURL) }
+                    } .padding(.horizontal, .pi)
+                        .background(Color(.white))
+                        .cornerRadius(20)
+                        .foregroundColor(.black)
+                }
+                }else{
+                    Link(url.name ?? "", destination: url.url!)
+                        .onDrag { NSItemProvider(object: url.url! as NSURL) }
+                        .padding(.horizontal, .pi)
+                        .background(Color(.white))
+                        .cornerRadius(20)
+                }
             }
         }
         .onChange(of: links, perform: { link in

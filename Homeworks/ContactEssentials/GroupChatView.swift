@@ -5,6 +5,9 @@
 //  Created by Nate on 12/9/22.
 //
 import SwiftUI
+import ContactsUI
+import UIKit
+import CoreGraphics
 
 struct GroupChatView: View{
     var groupchat: GroupChat
@@ -20,6 +23,7 @@ struct GroupChatView: View{
     private var contacts: FetchedResults<Contact> {
         return fetchRequest.wrappedValue
     }
+    @State private var selectedContact: CNContact?
     @State var addcontact = false
     var body: some View{
         VStack{
@@ -32,15 +36,17 @@ struct GroupChatView: View{
                 Image(systemName: "person.crop.circle.badge.plus")
             }.buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)
+                .onChange(of: selectedContact) { newValue in
+                    PersistenceController().addContact(name: selectedContact?.givenName ?? "Nil", phonenumber: ShowPhoneNumber(contact: selectedContact!), image: selectedContact?.imageData ?? .init(), relateTo: groupchat)
+                }
         }
             HStack{
                 ForEach(contacts){contact in
                     let uiimage =  UIImage(data: contact.image ?? .init())
-                    Image(uiImage: uiimage ?? .remove)
+                    Image(uiImage: uiimage ?? makeInitialsImage(from: contact.name ?? ""))
                         .resizable()
                         .scaledToFit()
                         .clipShape(Circle())
-                    Text(contact.phonenumber ?? "")
                 }
             }
             if !contacts.isEmpty{
@@ -51,11 +57,54 @@ struct GroupChatView: View{
                     Image(systemName: "phone.fill")
                 }.buttonStyle(.bordered)
             }
-
-            if addcontact{
-                AddContactView(groupchat: groupchat, addcontact: $addcontact)
-            }
+        }.sheet(isPresented: $addcontact) {
+            ContactPickerView(selectedContact: self.$selectedContact)
+        }
     }
+}
+extension String {
+    func stringByRemovingAll(characters: [Character]) -> String {
+        return String(self.filter({ !characters.contains($0) }))
+    }
+}
+
+
+extension GroupChatView{
+    func makeInitialsImage(from contact: String) -> UIImage {
+        let initials = contact
+        let font = UIFont.systemFont(ofSize: 20)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.white
+        ]
+        
+        // Create a blank image with a size of 100x100 pixels
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
+        let image = renderer.image { ctx in
+            // Fill the background of the image with a blue color
+            UIColor.systemBlue.setFill()
+            ctx.fill(CGRect(x: 0, y: 0, width: 100, height: 100))
+            
+            // Draw the contact's initials on top of the blue background
+            let attributedInitials = NSAttributedString(string: initials, attributes: attributes)
+            let textSize = attributedInitials.size()
+            let x = (100 - textSize.width) / 2
+            let y = (100 - textSize.height) / 2
+            attributedInitials.draw(at: CGPoint(x: x, y: y))
+        }
+        
+        return image
+    }
+
+
+    func ShowPhoneNumber(contact: CNContact) -> String{
+        for number in contact.phoneNumbers{
+            switch number.label{
+            default:
+                return number.value.stringValue
+            }
+        }
+        return "Nothing"
     }
     private func Facetime() {
         var phonenumbers = ""
@@ -70,10 +119,5 @@ struct GroupChatView: View{
             }else{
                 print("Did not work")
             }
-    }
-}
-extension String {
-    func stringByRemovingAll(characters: [Character]) -> String {
-        return String(self.filter({ !characters.contains($0) }))
     }
 }
