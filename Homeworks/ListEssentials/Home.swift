@@ -29,10 +29,10 @@ struct Home: View {
                             .font(.title2.bold())
                             .foregroundColor(colorScheme == .dark ? .white : .black)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
                         Spacer()
                         MenuButtons()
                     }.padding(.horizontal)
+                        .padding(.top, 50)
                     ListView(addtest: $addtest, addnew: $addnew, duedate: $duedate, datepicker: $datepicker, editing: $editing)
                         .padding()
                 }
@@ -69,8 +69,7 @@ struct Home: View {
                     }
                 }
             }
-            .navigationTitle("Welcome")
-            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(.hidden)
         }
     }
 }

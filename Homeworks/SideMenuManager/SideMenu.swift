@@ -10,6 +10,7 @@ import SwiftUI
 struct SideMenu: View {
     @Binding var selectedTab: String
     @Namespace var animation
+    @Binding var showmenu: Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
             
@@ -37,9 +38,9 @@ struct SideMenu: View {
 
             }
             VStack(alignment: .leading, spacing: 10){
-                TabButton(image: "house", title: "Home", seletedTab: $selectedTab, animation: animation)
+                TabButton(image: "house", title: "Home", seletedTab: $selectedTab, showmenu: $showmenu, animation: animation)
                 
-                TabButton(image: "person.3.fill", title: "GroupChat", seletedTab: $selectedTab, animation: animation)
+                TabButton(image: "person.3.fill", title: "GroupChat", seletedTab: $selectedTab, showmenu: $showmenu, animation: animation)
             }
             .padding(.leading, -15)
             .padding(.top, 50)
@@ -47,10 +48,10 @@ struct SideMenu: View {
             Spacer()
             
             VStack(alignment: .leading, spacing: 6) {
-                TabButton(image: "gear", title: "Settings", seletedTab: $selectedTab, animation: animation)
+                TabButton(image: "gear", title: "Settings", seletedTab: $selectedTab, showmenu: $showmenu, animation: animation)
                     .padding(.leading, -15)
                 
-                Text("App Version 0.6.0")
+                Text("App Version 0.6.1")
                     .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)

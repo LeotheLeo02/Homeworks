@@ -16,8 +16,7 @@ struct MainView: View {
             Color(.systemBlue)
                 .ignoresSafeArea()
             
-            SideMenu(selectedTab: $selectedTab)
-            
+            SideMenu(selectedTab: $selectedTab, showmenu: $showMenu)
             ZStack{
                 
                 Color(colorScheme == .dark ? .black:.white)

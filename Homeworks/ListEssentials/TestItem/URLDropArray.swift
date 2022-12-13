@@ -32,7 +32,7 @@ struct URLDropArray: View {
             HStack{
             ForEach(urls){url in
                 if url.url?.pathExtension == "pdf"{
-                    NavigationLink(destination: PDFKitRepresentedView(url.url ?? .downloadsDirectory)) {
+                    NavigationLink(destination: PDFQuickView(url: url.url ?? .downloadsDirectory)) {
                     HStack{
                         Text(url.name ?? "")
                         Image(systemName: "doc.fill")

@@ -7,6 +7,31 @@
 import SwiftUI
 import PDFKit
 
+
+
+struct PDFQuickView: View{
+    @Environment(\.dismiss) var dismiss
+    var url: URL
+    
+    init(url: URL) {
+        self.url = url
+    }
+    var body: some View{
+        VStack{
+            HStack{
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "arrowshape.left.fill")
+                }
+                Spacer()
+            }.padding()
+                .padding(.top, 50)
+            PDFKitRepresentedView(url)
+        }.navigationBarHidden(true)
+    }
+}
+
 struct PDFKitRepresentedView: UIViewRepresentable {
     let url: URL
 
