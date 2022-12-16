@@ -60,9 +60,3 @@ struct ListView: View {
         }
     }
 }
-
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        Home().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}

@@ -83,12 +83,6 @@ struct NewAssignItem: View {
     }
 }
 
-struct NewListItem_Previews: PreviewProvider {
-    static var previews: some View {
-        Home().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
-
 extension NewAssignItem {
     @ViewBuilder
     func Cover() -> some View{

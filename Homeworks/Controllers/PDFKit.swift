@@ -12,7 +12,6 @@ import PDFKit
 struct PDFQuickView: View{
     @Environment(\.dismiss) var dismiss
     var url: URL
-    
     init(url: URL) {
         self.url = url
     }
@@ -21,12 +20,17 @@ struct PDFQuickView: View{
             HStack{
                 Button {
                     dismiss()
+                    Stack.shared.updateValue(newValue: true)
                 } label: {
                     Image(systemName: "arrowshape.left.fill")
                 }
                 Spacer()
             }.padding()
                 .padding(.top, 50)
+                .onAppear(){
+                    Stack.shared.updateValue(newValue: false)
+                    print(Stack.shared.visible)
+                }
             PDFKitRepresentedView(url)
         }.navigationBarHidden(true)
     }
@@ -48,6 +52,6 @@ struct PDFKitRepresentedView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PDFKitRepresentedView>) {
-        // Update the view.
+        
     }
 }

@@ -36,18 +36,6 @@ struct Home: View {
                     ListView(addtest: $addtest, addnew: $addnew, duedate: $duedate, datepicker: $datepicker, editing: $editing)
                         .padding()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
-                        if editing{
-                            DoneButton(date: 2)
-                        }
-                    }
-                    ToolbarItem(placement: .cancellationAction) {
-                        if addnew || addtest && !datepicker{
-                            DoneButton(date: 3)
-                        }
-                    }
-                }
             }.overlay {
                 ZStack{
                     //If user wanted to edit the date of the assignmnet
@@ -69,13 +57,19 @@ struct Home: View {
                     }
                 }
             }
-            .toolbar(.hidden)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    if editing{
+                        DoneButton(date: 2)
+                    }
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    if addnew || addtest && !datepicker{
+                        DoneButton(date: 3)
+                    }
+                }
+            }
         }
-    }
-}
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Home().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 

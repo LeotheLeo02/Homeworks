@@ -7,7 +7,7 @@
 		<key>Beta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<false />
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
@@ -22,7 +22,7 @@
 		<key>43AC6DEF292C22D200917BC2</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 	</dict>
 </dict>
