@@ -15,11 +15,11 @@ struct Home: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Assignment.name, ascending: true)],
         animation: .default)
     private var assignments: FetchedResults<Assignment>
-    @State var addtest = false
-    @State var addnew = false
-    @State var datepicker = false
-    @State var duedate = Date.now
-    @State var editing = false
+    @Binding var addtest: Bool
+    @Binding var addnew: Bool
+    @Binding var datepicker: Bool
+    @Binding var duedate: Date
+    @Binding var editing: Bool
     var body: some View {
         NavigationStack {
             ScrollView{
@@ -49,23 +49,6 @@ struct Home: View {
                             .padding()
                             .background(colorScheme == .dark ? .black:.white,in: RoundedRectangle (cornerRadius: 12, style: .continuous))
                             .padding()
-                            .toolbar {
-                                ToolbarItem(placement: .confirmationAction) {
-                                    DoneButton(date: 1)
-                                }
-                            }
-                    }
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    if editing{
-                        DoneButton(date: 2)
-                    }
-                }
-                ToolbarItem(placement: .cancellationAction) {
-                    if addnew || addtest && !datepicker{
-                        DoneButton(date: 3)
                     }
                 }
             }
@@ -76,35 +59,6 @@ struct Home: View {
 
 
 extension Home {
-    @ViewBuilder
-    //Done button to finish textfield or datepicker
-    func DoneButton(date: Int) -> some View{
-                Button {
-                    withAnimation {
-                        if date == 1{
-                            datepicker = false
-                        }else if date == 2{
-                            editing = false
-                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                        }else{
-                            addnew = false
-                            editing = false
-                            addtest = false
-                        }
-                    }
-                } label: {
-                    if date == 3{
-                        Text("Cancel")
-                            .bold()
-                            .foregroundColor(.red)
-                    }else{
-                        Text("Done")
-                            .bold()
-                            .foregroundColor(.blue)
-                    }
-                }.buttonStyle(.bordered)
-                    .cornerRadius(.infinity)
-    }
     @ViewBuilder
     func MenuButtons() -> some View {
         Menu {
