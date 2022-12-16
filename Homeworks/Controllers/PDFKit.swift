@@ -17,22 +17,8 @@ struct PDFQuickView: View{
     }
     var body: some View{
         VStack{
-            HStack{
-                Button {
-                    dismiss()
-                    Stack.shared.updateValue(newValue: true)
-                } label: {
-                    Image(systemName: "arrowshape.left.fill")
-                }
-                Spacer()
-            }.padding()
-                .padding(.top, 50)
-                .onAppear(){
-                    Stack.shared.updateValue(newValue: false)
-                    print(Stack.shared.visible)
-                }
             PDFKitRepresentedView(url)
-        }.navigationBarHidden(true)
+        }
     }
 }
 
