@@ -64,7 +64,8 @@ struct MainView: View {
                         .padding()
                         .background(.ultraThinMaterial)
                         .clipShape(Circle())
-                        ,alignment: .topLeading
+                        .padding(.vertical, 45)
+                        ,alignment: .bottomLeading
                     )
                 })
         }
