@@ -51,7 +51,7 @@ struct SideMenu: View {
                 TabButton(image: "gear", title: "Settings", seletedTab: $selectedTab, showmenu: $showmenu, animation: animation)
                     .padding(.leading, -15)
                 
-                Text("App Version 0.6.1")
+                Text("App Version 0.6.2")
                     .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)

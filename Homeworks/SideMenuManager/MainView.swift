@@ -103,7 +103,6 @@ extension MainView{
                             editing = false
                             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                         }else{
-                            datepicker = false
                             addnew = false
                             editing = false
                             addtest = false

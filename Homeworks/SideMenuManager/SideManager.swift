@@ -13,7 +13,7 @@ struct SideManager: View {
     init(selectedTab: Binding<String>, addtest: Binding<Bool>, addnew: Binding<Bool>, datepicker: Binding<Bool>, duedate: Binding<Date>, editing: Binding<Bool>) {
         self._selectedTab = selectedTab
         self._addnew = addnew
-        self._addtest = addnew
+        self._addtest = addtest
         self._editing = editing
         self._datepicker = datepicker
         self._duedate = duedate
