@@ -12,13 +12,13 @@ struct TabButton: View {
     var title: String
     
     @Binding var seletedTab: String
-    @Binding var showmenu: Bool
+    @Binding var dislpaymenu: Bool
     var animation: Namespace.ID
     var body: some View {
         Button {
             withAnimation(.spring()){
                 seletedTab = title
-                showmenu = false
+                dislpaymenu = false
             }
         } label: {
             HStack(spacing: 15) {
