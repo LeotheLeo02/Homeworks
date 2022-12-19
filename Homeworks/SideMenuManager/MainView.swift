@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(\.colorScheme) var colorScheme
-    @State var selectedTab = "Home"
+    @State var selectedTab = "Main"
     @State var showMenu = false
     
     @State var addtest = false
